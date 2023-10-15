@@ -1,0 +1,22 @@
+//max of 3 numbers
+start
+
+    var x:int;
+    var y:int;
+    var z:int;
+    var max:int;
+    if(x>y)
+    {
+        max=y;
+    }
+    else
+    {
+        max=x;
+    }
+    if(z>max)
+    {
+        max=z;
+    }
+    print(max);
+
+end
