@@ -10,6 +10,7 @@ a.Special symbols, representing:
     arithmetic: +, -, *, /, %
     relational: <, <=, >=, ==, >
     assignment: =
+    comment: //
 -separators: ( ), [ ], { },  ,, :, ;, space, tab, new line
 -reserved words: var, int, string, if, else, for, while, read, print, start, end
 
