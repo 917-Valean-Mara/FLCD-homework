@@ -8,7 +8,7 @@ I.Lexic:
 a.Special symbols, representing:
 -operators: 
     arithmetic: +, -, *, /, %
-    relational: <, <=, >=, ==
+    relational: <, <=, >=, ==, >
     assignment: =
 -separators: ( ), [ ], { },  ,, :, ;, space, tab, new line
 -reserved words: var, int, string, if, else, for, while, read, print, start, end
