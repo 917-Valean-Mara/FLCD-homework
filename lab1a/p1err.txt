@@ -1,0 +1,22 @@
+//max of 3 numbers with 2 ERRORS
+start
+
+    var x:integer; //error
+    var y:int;
+    var z:int;
+    var #maxi:int //error
+    if(x>y)
+    {
+        max=y;
+    }
+    else
+    {
+        max=x;
+    }
+    if(z>max)
+    {
+        max=z;
+    }
+    print(max);
+
+end
