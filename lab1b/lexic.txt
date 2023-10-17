@@ -16,26 +16,25 @@ a.Special symbols, representing:
 
 b.Identifiers
 -rule: an identifier is a sequence of letters digits and "_", such that the first character is a letter 
--identifier ::= <letter> | <letter> <seq> 
--seq ::= <char> | <char> <seq> 
--char ::= <letter>| <digit> | <underline_character>
--digit ::= 0 | 1 |...| 9
--letter ::= a | b | ...| z | A | B | ...| Z
--underline_character ::=  _
+<identifier> ::= <letter> | <letter> <seq> 
+<seq> ::= <char> | <char> <seq> 
+<char> ::= 0 | 1 |...| 9
+<letter> ::= a | b | ...| z | A | B | ...| Z
+<underline_character> ::=  _
 
 c.Constants
 1.integer 
 -rule: an integer constant cannot start with 0 unless it is exactly 0, if it is negative it has a '-' sign, if it is positive it has a '+' sign 
--constint ::= 0 | <start_digit> |<sign> <start_digit> | <start_digit> <digit_seq> | <sign> <start_digit><digit_seq>
--start_digit ::= 1 | 2 |...| 9
--digit_seq ::= <digit> | <digit> <digit_seq> 
--digit ::= 0 | 1 |...| 9
--sign ::= - | +
+<constint> ::= 0 | <start_digit> |<sign> <start_digit> | <start_digit> <digit_seq> | <sign> <start_digit><digit_seq>
+<start_digit> ::= 1 | 2 |...| 9
+<digit_seq> ::= <digit> | <digit> <digit_seq> 
+<digit> ::= 0 | 1 |...| 9
+<sign> ::= - | +
 2.string
--conststring ::= "<string>"
--string ::= <char> | <char><string>
--char ::= <letter>| <digit> | <special_character>
--digit ::= 0 | 1 |...| 9
--letter ::= a | b | ...| z | A | B | ...| Z
--special_character ::= ! | @ | ... | ?
+<conststring> ::= "<string>"
+<string> ::= <char> | <char><string>
+<char> ::= <letter>| <digit> | <special_character>
+<digit> ::= 0 | 1 |...| 9
+<letter> ::= a | b | ...| z | A | B | ...| Z
+<special_character> ::= ! | @ | ... | ?
 
