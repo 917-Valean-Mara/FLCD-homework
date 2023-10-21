@@ -1,13 +1,13 @@
 //max of 3 numbers with 2 ERRORS
 start
 
-    var x:integer; //error
+    var x:int;
     var y:int;
     var z:int;
-    var #maxi:int //error
+    var 2max:int //error
     if(x>y)
     {
-        max=y;
+        ma$x=y; //error
     }
     else
     {
