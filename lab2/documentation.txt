@@ -1,0 +1,17 @@
+My SymbolTable is implemented by using a hashtable represented by a list of lists(buckets) which stores the keys (identifier or constant in our case)
+For resolving collisions it uses separate chaining which means that all the keys which hash to the same value will be contained in the bucket on different positions
+because of that I have defined a Pair class for representing the position of an element by refering to the bucket and the position it holds in that bucket
+
+For the SymbolTable I have the following:
+
+size: The size of the hash table, which determines the number of buckets; hash function calculates an index for each element based on this size
+
+table: An ArrayList of ArrayList<T> used to implement the hash table; each element of the outer listis  a bucket, and each bucket has an inner list that can store elements of type T
+
+hash Method: calculates a hash code (index) for an element of type T using the sum of ASCII codes of the characters in the element's string representation modulo the size
+
+insert Method: adds an element of type T to the hash table to the bucket corresponding to the hash value if the element is not already present
+
+getPosition Method: returns a Pair object representing the bucket and position (index within the bucket) of a given element in the hash table
+
+getKey Method: retrieves an element of type T from the hash table using a Pair object that specifies the bucket and position of the element
