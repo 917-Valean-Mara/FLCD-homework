@@ -10,7 +10,6 @@ a.Special symbols, representing:
     arithmetic: +, -, *, /, %
     relational: <, <=, >=, ==, >
     assignment: =
-    comment: //
 -separators: ( ), [ ], { },  ,, :, ;, space, tab, new line
 -reserved words: var, int, string, if, else, for, while, read, print, start, end
 
@@ -18,7 +17,8 @@ b.Identifiers
 -rule: an identifier is a sequence of letters digits and "_", such that the first character is a letter 
 <identifier> ::= <letter> | <letter> <seq> 
 <seq> ::= <char> | <char> <seq> 
-<char> ::= 0 | 1 |...| 9
+<char> ::= <digit> | <letter> | <underline_character>
+<digit> ::= 0 | 1 |...| 9
 <letter> ::= a | b | ...| z | A | B | ...| Z
 <underline_character> ::=  _
 

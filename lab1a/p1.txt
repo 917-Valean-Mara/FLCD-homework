@@ -1,4 +1,3 @@
-//max of 3 numbers
 start
 
     var x:int;

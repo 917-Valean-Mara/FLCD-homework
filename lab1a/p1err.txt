@@ -4,10 +4,10 @@ start
     var x:int;
     var y:int;
     var z:int;
-    var 2max:int //error
+    var 2max:int 
     if(x>y)
     {
-        ma$x=y; //error
+        ma$x=y; 
     }
     else
     {

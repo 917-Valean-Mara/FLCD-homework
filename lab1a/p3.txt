@@ -1,4 +1,3 @@
-//sum of n numbers
 start
     var n:int;
     var sum:int;
