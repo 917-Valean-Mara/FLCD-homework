@@ -1,0 +1,70 @@
+@startuml
+
+class SymbolTable<T> {
+  - size: Integer
+  - table: ArrayList<ArrayList<T>>
+  + SymbolTable(size: Integer)
+  + insert(key: T): void
+  + getPosition(key: T): Pair
+  + getKey(pair: Pair): T
+  + toString(): String
+}
+
+class Pair {
+  - bucket: Integer
+  - position: Integer
+  + Pair(bucket: Integer, position: Integer)
+  + getBucket(): Integer
+  + getPosition(): Integer
+  + toString(): String
+}
+
+class ProgramInternalForm {
+  - pif: ArrayList<PIFpair>
+  + ProgramInternalForm()
+  + add(token: String, position: PIFpair): void
+  + getPIF(): ArrayList<PIFpair>
+  + toString(): String
+}
+
+class PIFpair {
+  - position: Pair
+  - token: String
+  + PIFpair(token: String, position: Pair)
+  + getPosition(): Pair
+  + getToken(): String
+  + toString(): String
+}
+
+class Lexic {
+  + getOperators(): List<String>
+  + getSeparators(): List<String>
+  + getRw(): List<String>
+}
+
+class Scanner {
+  - symbolTable: SymbolTable<String>
+  - pif: ProgramInternalForm
+  - lexic: Lexic
+  + Scanner()
+  + scan(fileName: String): void
+  + readLine(tokensList: List<String>, line: Integer, result: StringBuilder): void
+  + tokenizeLine(line: String): List<String>
+  + writePif(outputFile: String, result: StringBuilder): void
+  + operator(operator: String): Boolean
+  + separator(separator: String): Boolean
+  + reservedWord(reservedWord: String): Boolean
+  + isNumber(token: String): Boolean
+  + isString(token: String): Boolean
+  + isCharacter(token: String): Boolean
+  + isConstant(token: String): Boolean
+  + isIdentifier(token: String): Boolean
+}
+
+SymbolTable --|> Pair
+ProgramInternalForm --|> PIFpair
+Scanner --|> SymbolTable
+Scanner --|> ProgramInternalForm
+Scanner --|> Lexic
+
+@enduml

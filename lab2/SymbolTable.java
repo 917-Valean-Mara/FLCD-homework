@@ -42,6 +42,14 @@ public class SymbolTable<T> {
         return this.table.get(pair.getBucket()).get(pair.getPosition());
     }
     
-
+    @Override
+    public String toString() {
+        String result = "";
+        for(int i = 0; i < this.size; i++) {
+            result += i + ": " + this.table.get(i) + "\n";
+        }
+        return result;
+    }
 
 }
+//1a - one symbol table for both identifiers and constants

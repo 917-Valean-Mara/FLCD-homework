@@ -1,0 +1,58 @@
+Token RESERVED WORD start on position -1
+Token RESERVED WORD var on position -1
+Token IDENTIFIER x on position (0, 0)
+Token SEPARATOR : on position -1
+Token RESERVED WORD int on position -1
+Token SEPARATOR ; on position -1
+Token RESERVED WORD var on position -1
+Token IDENTIFIER y on position (1, 0)
+Token SEPARATOR : on position -1
+Token RESERVED WORD int on position -1
+Token SEPARATOR ; on position -1
+Token RESERVED WORD var on position -1
+Token IDENTIFIER z on position (2, 0)
+Token SEPARATOR : on position -1
+Token RESERVED WORD int on position -1
+Token SEPARATOR ; on position -1
+Token RESERVED WORD var on position -1
+Token IDENTIFIER max on position (6, 0)
+Token SEPARATOR : on position -1
+Token RESERVED WORD int on position -1
+Token SEPARATOR ; on position -1
+Token RESERVED WORD if on position -1
+Token SEPARATOR ( on position -1
+Token IDENTIFIER x on position (0, 0)
+Token OPERATOR > on position -1
+Token IDENTIFIER y on position (1, 0)
+Token SEPARATOR ) on position -1
+Token SEPARATOR { on position -1
+Token IDENTIFIER max on position (6, 0)
+Token OPERATOR = on position -1
+Token IDENTIFIER y on position (1, 0)
+Token SEPARATOR ; on position -1
+Token SEPARATOR } on position -1
+Token RESERVED WORD else on position -1
+Token SEPARATOR { on position -1
+Token IDENTIFIER max on position (6, 0)
+Token OPERATOR = on position -1
+Token IDENTIFIER x on position (0, 0)
+Token SEPARATOR ; on position -1
+Token SEPARATOR } on position -1
+Token RESERVED WORD if on position -1
+Token SEPARATOR ( on position -1
+Token IDENTIFIER z on position (2, 0)
+Token OPERATOR > on position -1
+Token IDENTIFIER max on position (6, 0)
+Token SEPARATOR ) on position -1
+Token SEPARATOR { on position -1
+Token IDENTIFIER max on position (6, 0)
+Token OPERATOR = on position -1
+Token IDENTIFIER z on position (2, 0)
+Token SEPARATOR ; on position -1
+Token SEPARATOR } on position -1
+Token RESERVED WORD print on position -1
+Token SEPARATOR ( on position -1
+Token IDENTIFIER max on position (6, 0)
+Token SEPARATOR ) on position -1
+Token SEPARATOR ; on position -1
+Token RESERVED WORD end on position -1
