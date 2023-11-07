@@ -12,7 +12,7 @@ start
         print("false");
     }
 
-    for(d=3;d<=x;d=d+=2)
+    for(d=3;d<=x;d=d=d+2)
     { 
         if(x%d==0)
         {
