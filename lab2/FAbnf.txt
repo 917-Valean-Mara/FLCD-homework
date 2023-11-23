@@ -1,0 +1,16 @@
+<FAfile> ::= <states_decl> <alphabet_decl> <initial_state_decl> <final_states_decl> <transitions_decl>
+<states_decl> ::= Q=<states_list>
+<states_list> ::= <state> | <state> , <state_list>
+<alphabet_decl> ::= E=<alphabet_list>
+<alphabet_list> ::= <symbol> | <symbol> <alphabet_list>
+<initial_state_decl> ::= q0= <state>
+<final_states_decl> ::= F=<final_states_list>
+<final_states_list> ::= <state> | <state>,<final_states_list>
+<transitions_decl> ::= S={<transitions_list>}
+<transitions_list> ::= <transition> | <transition> , <transitions_list>
+<transition> ::= <state>,<symbol>,<state>
+<state> ::= <char> | <char> <state>
+<symbol> ::= <char>
+<char> ::= <letter>| <digit>
+<digit> ::= 0 | 1 |...| 9
+<letter> ::= a | b | ...| z | A | B | ...| Z

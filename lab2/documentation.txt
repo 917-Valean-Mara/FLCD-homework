@@ -35,3 +35,17 @@ tokenizeLine(String line): Tokenizes a given line of source code into a list of 
 writePif(String outputFile, StringBuilder result): Writes the output to different files, including the PIF file, symbol table file, and output file.
 Methods like operator(), separator(), and reservedWord() are used to check if a given token is an operator, separator, or reserved word based on the definitions provided in the Lexic class.
 Methods like isNumber(), isString(), isCharacter(), isConstant(), and isIdentifier() are used to determine the type of a token based on the language's lexicon specifications.
+
+FiniteAutomata class 
+Constructor: Initializes a finite automaton with a set of states (Q), an alphabet (E), an initial state (q0), a set of final states (F), and transitions (S).
+Set<String> getQ(): Returns the set of states (Q).
+Set<String> getE(): Returns the alphabet (E).
+String getQ0(): Returns the initial state (q0).
+Set<String> getF(): Returns the set of final states (F).
+Map<FApair, Set<String>> getS(): Returns the transitions (S).
+static FiniteAutomata readFromFile(String fileName): Reads a finite automaton from a file.
+boolean isDfa(): Checks if the automaton is a deterministic finite automaton (DFA).
+boolean isAccepted(String seq): Verifies if a sequence is accepted by the automaton.
+void displayElements(): Displays information about the finite automaton, including states, alphabet, transitions, initial state, and final states.
+void menu(): Provides a menu for user interaction to display various elements of the finite automaton and verify sequences.
+static void main(String[] args):  Main method to run the FiniteAutomata program featuring a menu for user interaction, including options to display the set of states (Q), alphabet (E), transitions (S), initial state (q0), set of final states (F), verify if a sequence is accepted (DFA only), and exit the program.
