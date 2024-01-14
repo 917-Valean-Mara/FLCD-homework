@@ -1,0 +1,25 @@
+start
+
+    var x:int;
+    var d:int;
+    
+    if(x == 2)
+    {
+        print("true");
+    }
+    if(x <= 1 or  x % 2 == 0)
+    {
+        print("false");
+    }
+
+    for(d = 3; d <= x; d = d = d + 2 )
+    { 
+        if(x%d==0)
+        {
+            print("false");
+        }
+
+    }
+
+    print("true");
+end

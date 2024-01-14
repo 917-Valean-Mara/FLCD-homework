@@ -1,0 +1,87 @@
+Reserved word: start
+Reserved word: var
+Separator:  
+Identifier: n
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: sum
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: i
+Separator: :
+Reserved word: int
+Separator: ;
+Identifier: sum
+Separator:  
+Operator: =
+Separator:  
+Number: 0
+Separator: ;
+Reserved word: read
+Separator: (
+Identifier: n
+Separator: )
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: v
+Separator: [
+Identifier: n
+Separator: ]
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: for
+Separator: (
+Identifier: i
+Separator:  
+Operator: =
+Separator:  
+Number: 0
+Separator: ;
+Separator:  
+Identifier: i
+Separator:  
+Operator: <
+Separator:  
+Identifier: n
+Separator: ;
+Separator:  
+Identifier: i
+Separator:  
+Operator: =
+Separator:  
+Identifier: i
+Separator:  
+Operator: +
+Separator:  
+Number: 1
+Separator: ;
+Separator: )
+Separator: {
+Identifier: sum
+Separator:  
+Operator: =
+Separator:  
+Identifier: sum
+Separator:  
+Operator: +
+Separator:  
+Identifier: v
+Separator: [
+Identifier: i
+Separator: ]
+Separator: ;
+Separator: }
+Reserved word: print
+Separator: (
+Identifier: sum
+Separator: )
+Separator: ;
+Reserved word: end

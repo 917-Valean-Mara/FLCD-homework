@@ -1,0 +1,76 @@
+Reserved word: start
+Reserved word: var
+Separator:  
+Identifier: x
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: y
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: z
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: max
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: if
+Separator: (
+Separator:  
+Identifier: x
+Separator:  
+Operator: >
+Separator:  
+Identifier: y
+Separator:  
+Separator: )
+Separator: {
+Identifier: max
+Separator:  
+Operator: =
+Separator:  
+Identifier: y
+Separator: ;
+Separator: }
+Reserved word: else
+Separator: {
+Identifier: max
+Separator:  
+Operator: =
+Separator:  
+Identifier: x
+Separator: ;
+Separator: }
+Reserved word: if
+Separator: (
+Separator:  
+Identifier: z
+Separator:  
+Operator: >
+Separator:  
+Identifier: max
+Separator:  
+Separator: )
+Separator: {
+Identifier: max
+Separator:  
+Operator: =
+Separator:  
+Identifier: z
+Separator: ;
+Separator: }
+Reserved word: print
+Separator: (
+Identifier: max
+Separator: )
+Separator: ;
+Reserved word: end

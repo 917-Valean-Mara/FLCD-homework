@@ -148,55 +148,55 @@ public class FiniteAutomata {
     }
 
     public void menu() {
-        Scanner scanner = new Scanner(System.in);
-        boolean exit = false;
+        try (Scanner scanner = new Scanner(System.in)) {
+            boolean exit = false;
 
-        while (!exit) {
-            System.out.println("\nMenu:");
-            System.out.println("1. Display set of states (Q)");
-            System.out.println("2. Display alphabet (E)");
-            System.out.println("3. Display transitions (S)");
-            System.out.println("4. Display initial state (q0)");
-            System.out.println("5. Display set of final states (F)");
-            System.out.println("6. Verify if a sequence is accepted (DFA only)");
-            System.out.println("7. Exit");
+            while (!exit) {
+                System.out.println("\nMenu:");
+                System.out.println("1. Display set of states (Q)");
+                System.out.println("2. Display alphabet (E)");
+                System.out.println("3. Display transitions (S)");
+                System.out.println("4. Display initial state (q0)");
+                System.out.println("5. Display set of final states (F)");
+                System.out.println("6. Verify if a sequence is accepted (DFA only)");
+                System.out.println("7. Exit");
 
-            System.out.print("Enter your choice: ");
-            int choice = scanner.nextInt();
+                System.out.print("Enter your choice: ");
+                int choice = scanner.nextInt();
 
-            switch (choice) {
-                case 1:
-                    System.out.println("Set of states (Q): " + Q);
-                    break;
-                case 2:
-                    System.out.println("Alphabet (E): " + E);
-                    break;
-                case 3:
-                    System.out.println("Transitions (S): " + S);
-                    break;
-                case 4:
-                    System.out.println("Initial state (q0): " + q0);
-                    break;
-                case 5:
-                    System.out.println("Set of final states (F): " + F);
-                    break;
-                case 6:
-                    if (isDfa()) {
-                        System.out.print("Enter the sequence to verify: ");
-                        String sequence = scanner.next();
-                        System.out.println("Sequence accepted: " + isAccepted(sequence));
-                    } else {
-                        System.out.println("The automata is not a DFA. Cannot verify sequences.");
-                    }
-                    break;
-                case 7:
-                    exit = true;
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please enter a valid option.");
+                switch (choice) {
+                    case 1:
+                        System.out.println("Set of states (Q): " + Q);
+                        break;
+                    case 2:
+                        System.out.println("Alphabet (E): " + E);
+                        break;
+                    case 3:
+                        System.out.println("Transitions (S): " + S);
+                        break;
+                    case 4:
+                        System.out.println("Initial state (q0): " + q0);
+                        break;
+                    case 5:
+                        System.out.println("Set of final states (F): " + F);
+                        break;
+                    case 6:
+                        if (isDfa()) {
+                            System.out.print("Enter the sequence to verify: ");
+                            String sequence = scanner.next();
+                            System.out.println("Sequence accepted: " + isAccepted(sequence));
+                        } else {
+                            System.out.println("The automata is not a DFA. Cannot verify sequences.");
+                        }
+                        break;
+                    case 7:
+                        exit = true;
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please enter a valid option.");
+                }
             }
         }
-
         System.out.println("Exiting the program.");
     }
 

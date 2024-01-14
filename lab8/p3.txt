@@ -1,0 +1,15 @@
+start
+    var n:int;
+    var sum:int;
+    var i:int;
+    sum = 0;
+    read(n);
+    var v[n]:int;
+
+    for(i = 0; i < n; i = i + 1;)
+    {
+        sum = sum + v[i];
+    }
+    
+    print(sum);
+end

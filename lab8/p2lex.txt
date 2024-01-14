@@ -1,0 +1,109 @@
+Reserved word: start
+Reserved word: var
+Separator:  
+Identifier: x
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: d
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: if
+Separator: (
+Identifier: x
+Separator:  
+Operator: ==
+Separator:  
+Number: 2
+Separator: )
+Separator: {
+Reserved word: print
+Separator: (
+String: "true"
+Separator: )
+Separator: ;
+Separator: }
+Reserved word: if
+Separator: (
+Identifier: x
+Separator:  
+Operator: <=
+Separator:  
+Number: 1
+Separator:  
+Identifier: or
+Identifier: x
+Separator:  
+Operator: %
+Separator:  
+Number: 2
+Separator:  
+Operator: ==
+Separator:  
+Number: 0
+Separator: )
+Separator: {
+Reserved word: print
+Separator: (
+String: "false"
+Separator: )
+Separator: ;
+Separator: }
+Reserved word: for
+Separator: (
+Identifier: d
+Separator:  
+Operator: =
+Separator:  
+Number: 3
+Separator: ;
+Separator:  
+Identifier: d
+Separator:  
+Operator: <=
+Separator:  
+Identifier: x
+Separator: ;
+Separator:  
+Identifier: d
+Separator:  
+Operator: =
+Separator:  
+Identifier: d
+Separator:  
+Operator: =
+Separator:  
+Identifier: d
+Separator:  
+Operator: +
+Separator:  
+Number: 2
+Separator:  
+Separator: )
+Separator: {
+Separator:  
+Reserved word: if
+Separator: (
+Identifier: x
+Operator: %
+Identifier: d
+Operator: ==
+Number: 0
+Separator: )
+Separator: {
+Reserved word: print
+Separator: (
+String: "false"
+Separator: )
+Separator: ;
+Separator: }
+Separator: }
+Reserved word: print
+Separator: (
+String: "true"
+Separator: )
+Separator: ;
+Reserved word: end

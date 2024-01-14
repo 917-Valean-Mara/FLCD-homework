@@ -3,18 +3,18 @@ start
     var x:int;
     var y:int;
     var z:int;
-    var 2max:int 
-    if(x>y)
+    var max:int;
+    if( x > y )
     {
-        ma$x=y; 
+        max = y;
     }
     else
     {
-        max=x;
+        max = x;
     }
-    if(z>max)
+    if( z > max )
     {
-        max=z;
+        max = z;
     }
     print(max);
 
