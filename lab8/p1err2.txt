@@ -1,0 +1,21 @@
+start
+
+    var x:int;
+    var y:int;
+    var z:int;
+    var 42max:int 
+    if(x>y)
+    {
+        ma$x=y; 
+    }
+    else
+    {
+        max=x;
+    }
+    if(z>max)
+    {
+        max=z;
+    }
+    print(max);
+
+end

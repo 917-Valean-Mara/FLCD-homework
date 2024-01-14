@@ -88,9 +88,13 @@ Separator:
 Reserved word: if
 Separator: (
 Identifier: x
+Separator:  
 Operator: %
+Separator:  
 Identifier: d
+Separator:  
 Operator: ==
+Separator:  
 Number: 0
 Separator: )
 Separator: {

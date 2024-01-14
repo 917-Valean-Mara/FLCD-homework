@@ -19,7 +19,7 @@ Reserved word: int
 Separator: ;
 Reserved word: var
 Separator:  
-Illegal identifier at line 5
+LEXICAL ERROR: Not recognized identifier at line 5
 Separator: :
 Reserved word: int
 Separator:  
@@ -30,8 +30,7 @@ Operator: >
 Identifier: y
 Separator: )
 Separator: {
-Identifier: ma
-$Identifier: x
+LEXICAL ERROR: Not recognized identifier at line 8
 Operator: =
 Identifier: y
 Separator: ;

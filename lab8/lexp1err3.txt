@@ -1,0 +1,63 @@
+Reserved word: start
+Reserved word: var
+Separator:  
+Identifier: x
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: y
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: z
+Separator: :
+Reserved word: int
+Separator: ;
+Reserved word: var
+Separator:  
+Identifier: max
+Separator: :
+Reserved word: int
+Separator:  
+Reserved word: if
+Separator: (
+Identifier: x
+Operator: >
+Identifier: y
+Separator: )
+Separator: {
+LEXICAL ERROR: Not recognized identifier at line 8
+Operator: =
+Identifier: y
+Separator: ;
+Separator:  
+Separator: }
+Reserved word: else
+Separator: {
+Identifier: max
+Operator: =
+Identifier: x
+Separator: ;
+Separator: }
+Reserved word: if
+Separator: (
+Identifier: z
+Operator: >
+Identifier: max
+Separator: )
+Separator: {
+Identifier: max
+Operator: =
+Identifier: z
+Separator: ;
+Separator: }
+Reserved word: print
+Separator: (
+Identifier: max
+Separator: )
+Separator: ;
+Reserved word: end
