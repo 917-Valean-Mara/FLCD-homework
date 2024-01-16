@@ -1,0 +1,54 @@
+%{
+#include "lang.tab.h"
+%}
+
+%%
+
+"var"       { return VAR; }
+"print"     { return PRINT; }
+"read"      { return READ; }
+"if"        { return IF; }
+"else"      { return ELSE; }
+"int"       { return INT; }
+"while"     { return WHILE; }
+"for"       { return FOR; }
+"string"    { return STRING; }
+"start"     { return START; }
+"end"       { return END; }
+
+"+"         { return PLUS; }
+"-"         { return MINUS; }
+"*"         { return TIMES; }
+"/"         { return DIVIDE; }
+"%"         { return MOD; }
+"<="        { return LESS_OR_EQUAL; }
+">="        { return GREATER_OR_EQUAL; }
+"<"         { return LESS; }
+">"         { return GREATER; }
+"=="        { return EQUAL; }
+"!="        { return DIFFERENT; }
+"="         { return ASSIGN; }
+"and"       { return AND; }
+"or"        { return OR; }
+
+"{"         { return LEFT_CURLY; }
+"}"         { return RIGHT_CURLY; }
+"("         { return LEFT_PAREN; }
+")"         { return RIGHT_PAREN; }
+"["         { return LEFT_BRACKET; }
+"]"         { return RIGHT_BRACKET; }
+":"         { return COLON; }
+";"         { return SEMICOLON; }
+","         { return COMMA; }
+"'"         { return APOSTROPHE; }
+"\""        { return QUOTE; }
+" "         { /* Ignore whitespace */ }
+"\n"        { /* Ignore newlines */ }
+
+[0-9]+      { return NUMBER_CONST; }
+[a-zA-Z_][a-zA-Z0-9_]* { return IDENTIFIER; }
+\"[a-zA-Z0-9_ ]+\" { return STRING_CONST; }
+
+.           { /* Ignore any other characters */ }
+
+%%

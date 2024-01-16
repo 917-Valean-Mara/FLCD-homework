@@ -1,0 +1,1035 @@
+Terminals unused in grammar
+
+   COMMA
+   APOSTROPHE
+   QUOTE
+   SPACE
+   DOT
+
+
+Gramaticã
+
+    0 $accept: program $end
+
+    1 program: START declaration_list compound_statement END
+
+    2 declaration_list: declaration
+    3                 | declaration SEMICOLON declaration_list
+
+    4 declaration: simple_declaration
+    5            | array_declaration
+
+    6 simple_declaration: VAR IDENTIFIER COLON type SEMICOLON
+
+    7 array_declaration: VAR IDENTIFIER LEFT_BRACKET NUMBER_CONST RIGHT_BRACKET COLON type SEMICOLON
+
+    8 type: INT
+    9     | STRING
+
+   10 compound_statement: statement
+   11                   | statement compound_statement
+
+   12 statement: assign_statement
+   13          | if_statement
+   14          | while_statement
+   15          | for_statement
+   16          | read_statement
+   17          | print_statement
+
+   18 print_statement: PRINT LEFT_PAREN term RIGHT_PAREN SEMICOLON
+
+   19 term: identifier
+   20     | constant
+
+   21 read_statement: READ LEFT_PAREN identifier RIGHT_PAREN SEMICOLON
+
+   22 for_statement: FOR LEFT_PAREN for_condition RIGHT_PAREN statement_list
+
+   23 for_condition: assign_statement condition SEMICOLON assign_statement
+
+   24 while_statement: WHILE LEFT_PAREN condition RIGHT_PAREN statement_list
+
+   25 assign_statement: identifier ASSIGN expression SEMICOLON
+
+   26 condition: expression relational_operator expression
+
+   27 relational_operator: LESS
+   28                    | LESS_OR_EQUAL
+   29                    | GREATER
+   30                    | GREATER_OR_EQUAL
+   31                    | EQUAL
+   32                    | DIFFERENT
+
+   33 expression: term
+   34           | term arithmetic_operator term
+
+   35 arithmetic_operator: PLUS
+   36                    | MINUS
+   37                    | TIMES
+   38                    | DIVIDE
+   39                    | MOD
+
+   40 statement_list: LEFT_CURLY compound_statement RIGHT_CURLY
+
+   41 if_statement: IF LEFT_PAREN condition RIGHT_PAREN statement_list
+   42             | if_statement else_statement
+
+   43 else_statement: ELSE statement_list
+
+   44 identifier: IDENTIFIER
+
+   45 constant: constint
+   46         | conststring
+
+   47 constint: NUMBER_CONST
+
+   48 conststring: STRING_CONST
+
+
+Terminale, cu reguli acolo unde acestea apar
+
+$end (0) 0
+error (256)
+IF (258) 41
+ELSE (259) 43
+FOR (260) 22
+WHILE (261) 24
+READ (262) 21
+PRINT (263) 18
+START (264) 1
+END (265) 1
+INT (266) 8
+VAR (267) 6 7
+STRING (268) 9
+PLUS (269) 35
+MINUS (270) 36
+TIMES (271) 37
+DIVIDE (272) 38
+MOD (273) 39
+LESS (274) 27
+LESS_OR_EQUAL (275) 28
+GREATER (276) 29
+GREATER_OR_EQUAL (277) 30
+EQUAL (278) 31
+DIFFERENT (279) 32
+ASSIGN (280) 25
+LEFT_CURLY (281) 40
+RIGHT_CURLY (282) 40
+LEFT_PAREN (283) 18 21 22 24 41
+RIGHT_PAREN (284) 18 21 22 24 41
+LEFT_BRACKET (285) 7
+RIGHT_BRACKET (286) 7
+COLON (287) 6 7
+SEMICOLON (288) 3 6 7 18 21 23 25
+COMMA (289)
+APOSTROPHE (290)
+QUOTE (291)
+SPACE (292)
+DOT (293)
+IDENTIFIER (294) 6 7 44
+NUMBER_CONST (295) 7 47
+STRING_CONST (296) 48
+
+
+Non-terminale, cu reguli acolo unde acestea apar
+
+$accept (42)
+    pe stânga: 0
+program (43)
+    pe stânga: 1, pe dreapta: 0
+declaration_list (44)
+    pe stânga: 2 3, pe dreapta: 1 3
+declaration (45)
+    pe stânga: 4 5, pe dreapta: 2 3
+simple_declaration (46)
+    pe stânga: 6, pe dreapta: 4
+array_declaration (47)
+    pe stânga: 7, pe dreapta: 5
+type (48)
+    pe stânga: 8 9, pe dreapta: 6 7
+compound_statement (49)
+    pe stânga: 10 11, pe dreapta: 1 11 40
+statement (50)
+    pe stânga: 12 13 14 15 16 17, pe dreapta: 10 11
+print_statement (51)
+    pe stânga: 18, pe dreapta: 17
+term (52)
+    pe stânga: 19 20, pe dreapta: 18 33 34
+read_statement (53)
+    pe stânga: 21, pe dreapta: 16
+for_statement (54)
+    pe stânga: 22, pe dreapta: 15
+for_condition (55)
+    pe stânga: 23, pe dreapta: 22
+while_statement (56)
+    pe stânga: 24, pe dreapta: 14
+assign_statement (57)
+    pe stânga: 25, pe dreapta: 12 23
+condition (58)
+    pe stânga: 26, pe dreapta: 23 24 41
+relational_operator (59)
+    pe stânga: 27 28 29 30 31 32, pe dreapta: 26
+expression (60)
+    pe stânga: 33 34, pe dreapta: 25 26
+arithmetic_operator (61)
+    pe stânga: 35 36 37 38 39, pe dreapta: 34
+statement_list (62)
+    pe stânga: 40, pe dreapta: 22 24 41 43
+if_statement (63)
+    pe stânga: 41 42, pe dreapta: 13 42
+else_statement (64)
+    pe stânga: 43, pe dreapta: 42
+identifier (65)
+    pe stânga: 44, pe dreapta: 19 21 25
+constant (66)
+    pe stânga: 45 46, pe dreapta: 20
+constint (67)
+    pe stânga: 47, pe dreapta: 45
+conststring (68)
+    pe stânga: 48, pe dreapta: 46
+
+
+stare 0
+
+    0 $accept: . program $end
+
+    START  shift, ºi mergi în starea 1
+
+    program  mergi în starea 2
+
+
+stare 1
+
+    1 program: START . declaration_list compound_statement END
+
+    VAR  shift, ºi mergi în starea 3
+
+    declaration_list    mergi în starea 4
+    declaration         mergi în starea 5
+    simple_declaration  mergi în starea 6
+    array_declaration   mergi în starea 7
+
+
+stare 2
+
+    0 $accept: program . $end
+
+    $end  shift, ºi mergi în starea 8
+
+
+stare 3
+
+    6 simple_declaration: VAR . IDENTIFIER COLON type SEMICOLON
+    7 array_declaration: VAR . IDENTIFIER LEFT_BRACKET NUMBER_CONST RIGHT_BRACKET COLON type SEMICOLON
+
+    IDENTIFIER  shift, ºi mergi în starea 9
+
+
+stare 4
+
+    1 program: START declaration_list . compound_statement END
+
+    IF          shift, ºi mergi în starea 10
+    FOR         shift, ºi mergi în starea 11
+    WHILE       shift, ºi mergi în starea 12
+    READ        shift, ºi mergi în starea 13
+    PRINT       shift, ºi mergi în starea 14
+    IDENTIFIER  shift, ºi mergi în starea 15
+
+    compound_statement  mergi în starea 16
+    statement           mergi în starea 17
+    print_statement     mergi în starea 18
+    read_statement      mergi în starea 19
+    for_statement       mergi în starea 20
+    while_statement     mergi în starea 21
+    assign_statement    mergi în starea 22
+    if_statement        mergi în starea 23
+    identifier          mergi în starea 24
+
+
+stare 5
+
+    2 declaration_list: declaration .
+    3                 | declaration . SEMICOLON declaration_list
+
+    SEMICOLON  shift, ºi mergi în starea 25
+
+    $implicit  reduce folosind regula 2 (declaration_list)
+
+
+stare 6
+
+    4 declaration: simple_declaration .
+
+    $implicit  reduce folosind regula 4 (declaration)
+
+
+stare 7
+
+    5 declaration: array_declaration .
+
+    $implicit  reduce folosind regula 5 (declaration)
+
+
+stare 8
+
+    0 $accept: program $end .
+
+    $implicit  accept
+
+
+stare 9
+
+    6 simple_declaration: VAR IDENTIFIER . COLON type SEMICOLON
+    7 array_declaration: VAR IDENTIFIER . LEFT_BRACKET NUMBER_CONST RIGHT_BRACKET COLON type SEMICOLON
+
+    LEFT_BRACKET  shift, ºi mergi în starea 26
+    COLON         shift, ºi mergi în starea 27
+
+
+stare 10
+
+   41 if_statement: IF . LEFT_PAREN condition RIGHT_PAREN statement_list
+
+    LEFT_PAREN  shift, ºi mergi în starea 28
+
+
+stare 11
+
+   22 for_statement: FOR . LEFT_PAREN for_condition RIGHT_PAREN statement_list
+
+    LEFT_PAREN  shift, ºi mergi în starea 29
+
+
+stare 12
+
+   24 while_statement: WHILE . LEFT_PAREN condition RIGHT_PAREN statement_list
+
+    LEFT_PAREN  shift, ºi mergi în starea 30
+
+
+stare 13
+
+   21 read_statement: READ . LEFT_PAREN identifier RIGHT_PAREN SEMICOLON
+
+    LEFT_PAREN  shift, ºi mergi în starea 31
+
+
+stare 14
+
+   18 print_statement: PRINT . LEFT_PAREN term RIGHT_PAREN SEMICOLON
+
+    LEFT_PAREN  shift, ºi mergi în starea 32
+
+
+stare 15
+
+   44 identifier: IDENTIFIER .
+
+    $implicit  reduce folosind regula 44 (identifier)
+
+
+stare 16
+
+    1 program: START declaration_list compound_statement . END
+
+    END  shift, ºi mergi în starea 33
+
+
+stare 17
+
+   10 compound_statement: statement .
+   11                   | statement . compound_statement
+
+    IF          shift, ºi mergi în starea 10
+    FOR         shift, ºi mergi în starea 11
+    WHILE       shift, ºi mergi în starea 12
+    READ        shift, ºi mergi în starea 13
+    PRINT       shift, ºi mergi în starea 14
+    IDENTIFIER  shift, ºi mergi în starea 15
+
+    $implicit  reduce folosind regula 10 (compound_statement)
+
+    compound_statement  mergi în starea 34
+    statement           mergi în starea 17
+    print_statement     mergi în starea 18
+    read_statement      mergi în starea 19
+    for_statement       mergi în starea 20
+    while_statement     mergi în starea 21
+    assign_statement    mergi în starea 22
+    if_statement        mergi în starea 23
+    identifier          mergi în starea 24
+
+
+stare 18
+
+   17 statement: print_statement .
+
+    $implicit  reduce folosind regula 17 (statement)
+
+
+stare 19
+
+   16 statement: read_statement .
+
+    $implicit  reduce folosind regula 16 (statement)
+
+
+stare 20
+
+   15 statement: for_statement .
+
+    $implicit  reduce folosind regula 15 (statement)
+
+
+stare 21
+
+   14 statement: while_statement .
+
+    $implicit  reduce folosind regula 14 (statement)
+
+
+stare 22
+
+   12 statement: assign_statement .
+
+    $implicit  reduce folosind regula 12 (statement)
+
+
+stare 23
+
+   13 statement: if_statement .
+   42 if_statement: if_statement . else_statement
+
+    ELSE  shift, ºi mergi în starea 35
+
+    $implicit  reduce folosind regula 13 (statement)
+
+    else_statement  mergi în starea 36
+
+
+stare 24
+
+   25 assign_statement: identifier . ASSIGN expression SEMICOLON
+
+    ASSIGN  shift, ºi mergi în starea 37
+
+
+stare 25
+
+    3 declaration_list: declaration SEMICOLON . declaration_list
+
+    VAR  shift, ºi mergi în starea 3
+
+    declaration_list    mergi în starea 38
+    declaration         mergi în starea 5
+    simple_declaration  mergi în starea 6
+    array_declaration   mergi în starea 7
+
+
+stare 26
+
+    7 array_declaration: VAR IDENTIFIER LEFT_BRACKET . NUMBER_CONST RIGHT_BRACKET COLON type SEMICOLON
+
+    NUMBER_CONST  shift, ºi mergi în starea 39
+
+
+stare 27
+
+    6 simple_declaration: VAR IDENTIFIER COLON . type SEMICOLON
+
+    INT     shift, ºi mergi în starea 40
+    STRING  shift, ºi mergi în starea 41
+
+    type  mergi în starea 42
+
+
+stare 28
+
+   41 if_statement: IF LEFT_PAREN . condition RIGHT_PAREN statement_list
+
+    IDENTIFIER    shift, ºi mergi în starea 15
+    NUMBER_CONST  shift, ºi mergi în starea 43
+    STRING_CONST  shift, ºi mergi în starea 44
+
+    term         mergi în starea 45
+    condition    mergi în starea 46
+    expression   mergi în starea 47
+    identifier   mergi în starea 48
+    constant     mergi în starea 49
+    constint     mergi în starea 50
+    conststring  mergi în starea 51
+
+
+stare 29
+
+   22 for_statement: FOR LEFT_PAREN . for_condition RIGHT_PAREN statement_list
+
+    IDENTIFIER  shift, ºi mergi în starea 15
+
+    for_condition     mergi în starea 52
+    assign_statement  mergi în starea 53
+    identifier        mergi în starea 24
+
+
+stare 30
+
+   24 while_statement: WHILE LEFT_PAREN . condition RIGHT_PAREN statement_list
+
+    IDENTIFIER    shift, ºi mergi în starea 15
+    NUMBER_CONST  shift, ºi mergi în starea 43
+    STRING_CONST  shift, ºi mergi în starea 44
+
+    term         mergi în starea 45
+    condition    mergi în starea 54
+    expression   mergi în starea 47
+    identifier   mergi în starea 48
+    constant     mergi în starea 49
+    constint     mergi în starea 50
+    conststring  mergi în starea 51
+
+
+stare 31
+
+   21 read_statement: READ LEFT_PAREN . identifier RIGHT_PAREN SEMICOLON
+
+    IDENTIFIER  shift, ºi mergi în starea 15
+
+    identifier  mergi în starea 55
+
+
+stare 32
+
+   18 print_statement: PRINT LEFT_PAREN . term RIGHT_PAREN SEMICOLON
+
+    IDENTIFIER    shift, ºi mergi în starea 15
+    NUMBER_CONST  shift, ºi mergi în starea 43
+    STRING_CONST  shift, ºi mergi în starea 44
+
+    term         mergi în starea 56
+    identifier   mergi în starea 48
+    constant     mergi în starea 49
+    constint     mergi în starea 50
+    conststring  mergi în starea 51
+
+
+stare 33
+
+    1 program: START declaration_list compound_statement END .
+
+    $implicit  reduce folosind regula 1 (program)
+
+
+stare 34
+
+   11 compound_statement: statement compound_statement .
+
+    $implicit  reduce folosind regula 11 (compound_statement)
+
+
+stare 35
+
+   43 else_statement: ELSE . statement_list
+
+    LEFT_CURLY  shift, ºi mergi în starea 57
+
+    statement_list  mergi în starea 58
+
+
+stare 36
+
+   42 if_statement: if_statement else_statement .
+
+    $implicit  reduce folosind regula 42 (if_statement)
+
+
+stare 37
+
+   25 assign_statement: identifier ASSIGN . expression SEMICOLON
+
+    IDENTIFIER    shift, ºi mergi în starea 15
+    NUMBER_CONST  shift, ºi mergi în starea 43
+    STRING_CONST  shift, ºi mergi în starea 44
+
+    term         mergi în starea 45
+    expression   mergi în starea 59
+    identifier   mergi în starea 48
+    constant     mergi în starea 49
+    constint     mergi în starea 50
+    conststring  mergi în starea 51
+
+
+stare 38
+
+    3 declaration_list: declaration SEMICOLON declaration_list .
+
+    $implicit  reduce folosind regula 3 (declaration_list)
+
+
+stare 39
+
+    7 array_declaration: VAR IDENTIFIER LEFT_BRACKET NUMBER_CONST . RIGHT_BRACKET COLON type SEMICOLON
+
+    RIGHT_BRACKET  shift, ºi mergi în starea 60
+
+
+stare 40
+
+    8 type: INT .
+
+    $implicit  reduce folosind regula 8 (type)
+
+
+stare 41
+
+    9 type: STRING .
+
+    $implicit  reduce folosind regula 9 (type)
+
+
+stare 42
+
+    6 simple_declaration: VAR IDENTIFIER COLON type . SEMICOLON
+
+    SEMICOLON  shift, ºi mergi în starea 61
+
+
+stare 43
+
+   47 constint: NUMBER_CONST .
+
+    $implicit  reduce folosind regula 47 (constint)
+
+
+stare 44
+
+   48 conststring: STRING_CONST .
+
+    $implicit  reduce folosind regula 48 (conststring)
+
+
+stare 45
+
+   33 expression: term .
+   34           | term . arithmetic_operator term
+
+    PLUS    shift, ºi mergi în starea 62
+    MINUS   shift, ºi mergi în starea 63
+    TIMES   shift, ºi mergi în starea 64
+    DIVIDE  shift, ºi mergi în starea 65
+    MOD     shift, ºi mergi în starea 66
+
+    $implicit  reduce folosind regula 33 (expression)
+
+    arithmetic_operator  mergi în starea 67
+
+
+stare 46
+
+   41 if_statement: IF LEFT_PAREN condition . RIGHT_PAREN statement_list
+
+    RIGHT_PAREN  shift, ºi mergi în starea 68
+
+
+stare 47
+
+   26 condition: expression . relational_operator expression
+
+    LESS              shift, ºi mergi în starea 69
+    LESS_OR_EQUAL     shift, ºi mergi în starea 70
+    GREATER           shift, ºi mergi în starea 71
+    GREATER_OR_EQUAL  shift, ºi mergi în starea 72
+    EQUAL             shift, ºi mergi în starea 73
+    DIFFERENT         shift, ºi mergi în starea 74
+
+    relational_operator  mergi în starea 75
+
+
+stare 48
+
+   19 term: identifier .
+
+    $implicit  reduce folosind regula 19 (term)
+
+
+stare 49
+
+   20 term: constant .
+
+    $implicit  reduce folosind regula 20 (term)
+
+
+stare 50
+
+   45 constant: constint .
+
+    $implicit  reduce folosind regula 45 (constant)
+
+
+stare 51
+
+   46 constant: conststring .
+
+    $implicit  reduce folosind regula 46 (constant)
+
+
+stare 52
+
+   22 for_statement: FOR LEFT_PAREN for_condition . RIGHT_PAREN statement_list
+
+    RIGHT_PAREN  shift, ºi mergi în starea 76
+
+
+stare 53
+
+   23 for_condition: assign_statement . condition SEMICOLON assign_statement
+
+    IDENTIFIER    shift, ºi mergi în starea 15
+    NUMBER_CONST  shift, ºi mergi în starea 43
+    STRING_CONST  shift, ºi mergi în starea 44
+
+    term         mergi în starea 45
+    condition    mergi în starea 77
+    expression   mergi în starea 47
+    identifier   mergi în starea 48
+    constant     mergi în starea 49
+    constint     mergi în starea 50
+    conststring  mergi în starea 51
+
+
+stare 54
+
+   24 while_statement: WHILE LEFT_PAREN condition . RIGHT_PAREN statement_list
+
+    RIGHT_PAREN  shift, ºi mergi în starea 78
+
+
+stare 55
+
+   21 read_statement: READ LEFT_PAREN identifier . RIGHT_PAREN SEMICOLON
+
+    RIGHT_PAREN  shift, ºi mergi în starea 79
+
+
+stare 56
+
+   18 print_statement: PRINT LEFT_PAREN term . RIGHT_PAREN SEMICOLON
+
+    RIGHT_PAREN  shift, ºi mergi în starea 80
+
+
+stare 57
+
+   40 statement_list: LEFT_CURLY . compound_statement RIGHT_CURLY
+
+    IF          shift, ºi mergi în starea 10
+    FOR         shift, ºi mergi în starea 11
+    WHILE       shift, ºi mergi în starea 12
+    READ        shift, ºi mergi în starea 13
+    PRINT       shift, ºi mergi în starea 14
+    IDENTIFIER  shift, ºi mergi în starea 15
+
+    compound_statement  mergi în starea 81
+    statement           mergi în starea 17
+    print_statement     mergi în starea 18
+    read_statement      mergi în starea 19
+    for_statement       mergi în starea 20
+    while_statement     mergi în starea 21
+    assign_statement    mergi în starea 22
+    if_statement        mergi în starea 23
+    identifier          mergi în starea 24
+
+
+stare 58
+
+   43 else_statement: ELSE statement_list .
+
+    $implicit  reduce folosind regula 43 (else_statement)
+
+
+stare 59
+
+   25 assign_statement: identifier ASSIGN expression . SEMICOLON
+
+    SEMICOLON  shift, ºi mergi în starea 82
+
+
+stare 60
+
+    7 array_declaration: VAR IDENTIFIER LEFT_BRACKET NUMBER_CONST RIGHT_BRACKET . COLON type SEMICOLON
+
+    COLON  shift, ºi mergi în starea 83
+
+
+stare 61
+
+    6 simple_declaration: VAR IDENTIFIER COLON type SEMICOLON .
+
+    $implicit  reduce folosind regula 6 (simple_declaration)
+
+
+stare 62
+
+   35 arithmetic_operator: PLUS .
+
+    $implicit  reduce folosind regula 35 (arithmetic_operator)
+
+
+stare 63
+
+   36 arithmetic_operator: MINUS .
+
+    $implicit  reduce folosind regula 36 (arithmetic_operator)
+
+
+stare 64
+
+   37 arithmetic_operator: TIMES .
+
+    $implicit  reduce folosind regula 37 (arithmetic_operator)
+
+
+stare 65
+
+   38 arithmetic_operator: DIVIDE .
+
+    $implicit  reduce folosind regula 38 (arithmetic_operator)
+
+
+stare 66
+
+   39 arithmetic_operator: MOD .
+
+    $implicit  reduce folosind regula 39 (arithmetic_operator)
+
+
+stare 67
+
+   34 expression: term arithmetic_operator . term
+
+    IDENTIFIER    shift, ºi mergi în starea 15
+    NUMBER_CONST  shift, ºi mergi în starea 43
+    STRING_CONST  shift, ºi mergi în starea 44
+
+    term         mergi în starea 84
+    identifier   mergi în starea 48
+    constant     mergi în starea 49
+    constint     mergi în starea 50
+    conststring  mergi în starea 51
+
+
+stare 68
+
+   41 if_statement: IF LEFT_PAREN condition RIGHT_PAREN . statement_list
+
+    LEFT_CURLY  shift, ºi mergi în starea 57
+
+    statement_list  mergi în starea 85
+
+
+stare 69
+
+   27 relational_operator: LESS .
+
+    $implicit  reduce folosind regula 27 (relational_operator)
+
+
+stare 70
+
+   28 relational_operator: LESS_OR_EQUAL .
+
+    $implicit  reduce folosind regula 28 (relational_operator)
+
+
+stare 71
+
+   29 relational_operator: GREATER .
+
+    $implicit  reduce folosind regula 29 (relational_operator)
+
+
+stare 72
+
+   30 relational_operator: GREATER_OR_EQUAL .
+
+    $implicit  reduce folosind regula 30 (relational_operator)
+
+
+stare 73
+
+   31 relational_operator: EQUAL .
+
+    $implicit  reduce folosind regula 31 (relational_operator)
+
+
+stare 74
+
+   32 relational_operator: DIFFERENT .
+
+    $implicit  reduce folosind regula 32 (relational_operator)
+
+
+stare 75
+
+   26 condition: expression relational_operator . expression
+
+    IDENTIFIER    shift, ºi mergi în starea 15
+    NUMBER_CONST  shift, ºi mergi în starea 43
+    STRING_CONST  shift, ºi mergi în starea 44
+
+    term         mergi în starea 45
+    expression   mergi în starea 86
+    identifier   mergi în starea 48
+    constant     mergi în starea 49
+    constint     mergi în starea 50
+    conststring  mergi în starea 51
+
+
+stare 76
+
+   22 for_statement: FOR LEFT_PAREN for_condition RIGHT_PAREN . statement_list
+
+    LEFT_CURLY  shift, ºi mergi în starea 57
+
+    statement_list  mergi în starea 87
+
+
+stare 77
+
+   23 for_condition: assign_statement condition . SEMICOLON assign_statement
+
+    SEMICOLON  shift, ºi mergi în starea 88
+
+
+stare 78
+
+   24 while_statement: WHILE LEFT_PAREN condition RIGHT_PAREN . statement_list
+
+    LEFT_CURLY  shift, ºi mergi în starea 57
+
+    statement_list  mergi în starea 89
+
+
+stare 79
+
+   21 read_statement: READ LEFT_PAREN identifier RIGHT_PAREN . SEMICOLON
+
+    SEMICOLON  shift, ºi mergi în starea 90
+
+
+stare 80
+
+   18 print_statement: PRINT LEFT_PAREN term RIGHT_PAREN . SEMICOLON
+
+    SEMICOLON  shift, ºi mergi în starea 91
+
+
+stare 81
+
+   40 statement_list: LEFT_CURLY compound_statement . RIGHT_CURLY
+
+    RIGHT_CURLY  shift, ºi mergi în starea 92
+
+
+stare 82
+
+   25 assign_statement: identifier ASSIGN expression SEMICOLON .
+
+    $implicit  reduce folosind regula 25 (assign_statement)
+
+
+stare 83
+
+    7 array_declaration: VAR IDENTIFIER LEFT_BRACKET NUMBER_CONST RIGHT_BRACKET COLON . type SEMICOLON
+
+    INT     shift, ºi mergi în starea 40
+    STRING  shift, ºi mergi în starea 41
+
+    type  mergi în starea 93
+
+
+stare 84
+
+   34 expression: term arithmetic_operator term .
+
+    $implicit  reduce folosind regula 34 (expression)
+
+
+stare 85
+
+   41 if_statement: IF LEFT_PAREN condition RIGHT_PAREN statement_list .
+
+    $implicit  reduce folosind regula 41 (if_statement)
+
+
+stare 86
+
+   26 condition: expression relational_operator expression .
+
+    $implicit  reduce folosind regula 26 (condition)
+
+
+stare 87
+
+   22 for_statement: FOR LEFT_PAREN for_condition RIGHT_PAREN statement_list .
+
+    $implicit  reduce folosind regula 22 (for_statement)
+
+
+stare 88
+
+   23 for_condition: assign_statement condition SEMICOLON . assign_statement
+
+    IDENTIFIER  shift, ºi mergi în starea 15
+
+    assign_statement  mergi în starea 94
+    identifier        mergi în starea 24
+
+
+stare 89
+
+   24 while_statement: WHILE LEFT_PAREN condition RIGHT_PAREN statement_list .
+
+    $implicit  reduce folosind regula 24 (while_statement)
+
+
+stare 90
+
+   21 read_statement: READ LEFT_PAREN identifier RIGHT_PAREN SEMICOLON .
+
+    $implicit  reduce folosind regula 21 (read_statement)
+
+
+stare 91
+
+   18 print_statement: PRINT LEFT_PAREN term RIGHT_PAREN SEMICOLON .
+
+    $implicit  reduce folosind regula 18 (print_statement)
+
+
+stare 92
+
+   40 statement_list: LEFT_CURLY compound_statement RIGHT_CURLY .
+
+    $implicit  reduce folosind regula 40 (statement_list)
+
+
+stare 93
+
+    7 array_declaration: VAR IDENTIFIER LEFT_BRACKET NUMBER_CONST RIGHT_BRACKET COLON type . SEMICOLON
+
+    SEMICOLON  shift, ºi mergi în starea 95
+
+
+stare 94
+
+   23 for_condition: assign_statement condition SEMICOLON assign_statement .
+
+    $implicit  reduce folosind regula 23 (for_condition)
+
+
+stare 95
+
+    7 array_declaration: VAR IDENTIFIER LEFT_BRACKET NUMBER_CONST RIGHT_BRACKET COLON type SEMICOLON .
+
+    $implicit  reduce folosind regula 7 (array_declaration)
